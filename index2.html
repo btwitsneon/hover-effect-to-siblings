@@ -4,10 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hover Effect</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body,
+        .__root {
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #302222;
+        }
+
+        body {
+            font-family: monospace;
+            color: #C3B9B5;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        section {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 5rem;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        header h3 {
+            color: #796157;
+            font-size: .85rem;
+        }
+        main {
+            position: relative;
+            height: 100%;
+            margin-top: 5rem;
+        }
+        main ul {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+        main ul li {
+            font-size: 1.5rem;
+        }
+        main ul li.item_preview {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            transform: rotate(2deg);
+            opacity: 0;
+            transition: opacity 500ms ease, transform 200ms ease;
+            transition-delay: 500ms;
+        }
+        main ul li.item_preview.preview {
+            opacity: 1;
+            background-color: crimson;
+        }
+        .item {
+            cursor: pointer;
+        }
+
+        .item:hover + .item_preview {
+            opacity: 1;
+            transform: rotate(0);
+            transition-delay: 0s;
+        }
+
+    </style>
 </head>
 <body>
     <div class="__root">
-        <main></main>
+
+        <section>
+            <header>
+                <h1>My Works</h1>
+                <h3>Projects I worked on</h3>
+            </header>
+
+            <main>
+                <ul>
+                    <li class="item_preview preview">
+                    </li>
+                    <li class="item item_01">Google Venture</li>
+                    <li class="item_preview preview_01">
+                        <img src="image 2.png" alt="">
+                    </li>
+                    <li class="item item_02">Spotify</li>
+                    <li class="item_preview preview_02">
+                        <img src="image 3.png" alt="">
+                    </li>
+                    <li class="item item_03">Youtube</li>
+                    <li class="item_preview preview_04">
+                        <img src="image 4.png" alt="">
+                    </li>
+                </ul>
+            </main>
+        </section>
+
     </div>
 </body>
 </html>
