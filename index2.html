@@ -93,6 +93,12 @@
             transform: rotate(0);
             transition-delay: 0s;
         }
+        .item:hover + .item_preview ~ .item_preview {
+            opacity: 0;
+            transform: rotate(0);
+            transition: 200ms ease;
+            transition-delay: 0s;
+        }
 
     </style>
 </head>
