@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect to Siblings</title>
+</head>
+
+<style>
+    li span {
+        opacity: 0;
+        transition: opacity 200ms ease;
+    }
+    
+    .icanfixyou:hover ~ .changeme,
+    .icanfixyou:hover ~ .changeme span,
+    .icanfixyou:hover span {
+        color: brown;
+        opacity: 1;
+        transition: 200ms ease;
+    }
+
+    
+    .icanfixyou:has(span:hover) + li span {
+        opacity: 1;
+        color: blue;
+    }
+
+</style>
+<body>
+    
+
+    <div class="__root">
+        <main>
+            <ul>
+                <li class="icanfixyou">Hover me <span><strong>Hover Me too</strong></span></li>
+                <li>:) <span>change me too. I'm your first sibling</span></li>
+                <li class="changeme">I should change <span>(she made me brown ;-;)</span></li>
+            </ul>
+        </main>
+    </div>
+
+</body>
+</html>
